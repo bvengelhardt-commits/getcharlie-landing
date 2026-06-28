@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.getcharlie.app",
+      "sha256_cert_fingerprints": [
+        "8A:7E:4A:AC:8A:3C:7B:B1:06:FC:55:92:34:72:E7:F7:71:2E:92:4A:61:DF:5D:9D:4B:30:A3:34:EF:6F:22:EF"
+      ]
+    }
+  }
+]

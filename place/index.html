@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlie's Recos</title>
+  <meta http-equiv="refresh" content="0; url=https://charliesrecos.com">
+  <script>
+    // Try to open the app via deep link first
+    const path = window.location.pathname; // /place/{id}
+    const appUrl = 'charlie:/' + path;
+    window.location = appUrl;
+    // Fallback to web app after short delay
+    setTimeout(() => { window.location = 'https://charliesrecos.com'; }, 1500);
+  </script>
+</head>
+<body>
+  <p>Öffne <a href="https://charliesrecos.com">Charlie's Recos</a>...</p>
+</body>
+</html>

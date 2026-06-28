@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.getcharlie.app/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.getcharlie.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.getcharlie.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.getcharlie.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.getcharlie.app/es/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://www.getcharlie.app/en/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.getcharlie.app/fr/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.getcharlie.app/es/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.getcharlie.app/datenschutz/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.getcharlie.app/en/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.getcharlie.app/fr/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.getcharlie.app/es/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.getcharlie.app/support/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+</urlset>

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "KM65F6372N.app.getcharlie.app",
+        "paths": ["/place/*", "/invite/*", "/share/*"]
+      }
+    ]
+  }
+}

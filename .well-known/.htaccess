@@ -1,0 +1,5 @@
+AddType application/json .json
+<Files "apple-app-site-association">
+    AddType application/json .
+    Header set Content-Type "application/json"
+</Files>
