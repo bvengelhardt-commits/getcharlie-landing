@@ -101,6 +101,27 @@
   <link rel="alternate" hreflang="en" href="https://www.getcharlie.app/en/" />
   <link rel="alternate" hreflang="fr" href="https://www.getcharlie.app/fr/" />
   <link rel="alternate" hreflang="es" href="https://www.getcharlie.app/es/" />
+  <script>
+    // German stays the default at the root, but a first-time visitor whose
+    // browser language is one of our other locales gets sent straight to
+    // it instead of landing on German first. Only fires once per visitor —
+    // once `charlieLangVisited` is set (by this page or any locale page,
+    // see their matching snippet), returning to "/" (e.g. the nav-brand
+    // logo, or the "DE" link from another locale) is respected as an
+    // explicit choice and never auto-redirects again. Runs synchronously
+    // in <head> so it fires before the page paints, not after a flash of
+    // German content. Does not affect the raw HTML search engines and link-
+    // preview crawlers (Facebook, etc.) see, since those don't execute JS.
+    (function () {
+      try {
+        if (localStorage.getItem('charlieLangVisited')) return;
+        localStorage.setItem('charlieLangVisited', '1');
+        var lang = ((navigator.language || navigator.userLanguage || '') + '').toLowerCase();
+        var target = { en: '/en/', fr: '/fr/', es: '/es/' }[lang.slice(0, 2)];
+        if (target) location.replace(target);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
