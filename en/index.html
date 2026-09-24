@@ -5,30 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charlie's Recos – Recommendations from Friends</title>
-  <meta name="description" content="The places your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems." />
+  <meta name="description" content="The places and things your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems — now with chat." />
   <link rel="alternate" hreflang="de" href="https://www.getcharlie.app/" />
   <link rel="alternate" hreflang="en" href="https://www.getcharlie.app/en/" />
   <link rel="alternate" hreflang="fr" href="https://www.getcharlie.app/fr/" />
   <link rel="alternate" hreflang="es" href="https://www.getcharlie.app/es/" />
   <script>try { localStorage.setItem('charlieLangVisited', '1'); } catch (e) {}</script>
   <link rel="canonical" href="https://www.getcharlie.app/en/" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Charlie's Recos" />
   <meta property="og:title" content="Charlie's Recos – Recommendations from Friends" />
-  <meta property="og:description" content="The places your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems." />
+  <meta property="og:description" content="The places and things your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems — now with chat." />
   <meta property="og:url" content="https://www.getcharlie.app/en/" />
-  <meta property="og:image" content="https://www.getcharlie.app/icon.png" />
+  <meta property="og:image" content="https://www.getcharlie.app/icon-512.png" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Charlie's Recos – Recommendations from Friends" />
-  <meta name="twitter:description" content="The places your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems." />
-  <meta name="twitter:image" content="https://www.getcharlie.app/icon.png" />
+  <meta name="twitter:description" content="The places and things your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems — now with chat." />
+  <meta name="twitter:image" content="https://www.getcharlie.app/icon-512.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Charlie's Recos",
-    "description": "The places your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems.",
+    "description": "The places and things your friends would truly recommend. Charlie is the personal recommendation map for real hidden gems — now with chat.",
     "url": "https://www.getcharlie.app/",
     "applicationCategory": "TravelApplication",
     "operatingSystem": "iOS, Android",
@@ -48,7 +50,7 @@
     /* Nav */
     nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5vw; background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo { width: 36px; height: 36px; background: var(--red); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 18px; }
+    .nav-logo { width: 36px; height: 36px; border-radius: 10px; display: block; }
     .nav-name { font-weight: 900; font-size: 20px; color: var(--text); }
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 15px; font-weight: 500; transition: color .2s; }
@@ -109,7 +111,7 @@
 
 <nav>
   <a class="nav-brand" href="/">
-    <div class="nav-logo">C</div>
+    <img class="nav-logo" src="/icon-512.png" alt="Charlie" width="36" height="36" />
     <span class="nav-name">Charlie</span>
   </a>
   <div class="nav-links">
@@ -125,7 +127,7 @@
 <section class="hero">
   <div class="hero-badge">🗺 For iOS &amp; Android &amp; Web</div>
   <h1>The places your<br /><span>friends recommend</span></h1>
-  <p>No anonymous reviews. No paid placements. Just real recommendations from people you trust.</p>
+  <p>No anonymous reviews. No paid placements. Just real recommendations from people you trust — places, books, movies and more.</p>
   <div class="hero-btns">
     <a class="btn-primary" href="https://apps.apple.com/app/id6762520662" target="_blank" rel="noopener">
       🍎 App Store (iOS)
@@ -137,7 +139,7 @@
       🌐 Open in Browser
     </a>
   </div>
-  <p class="store-note">Free · iOS 16+ · Android 8+</p>
+  <p class="store-note">Free · Age rating: 4+ (iOS) · Everyone (Google Play)</p>
 </section>
 
 <div class="features" id="features">
@@ -150,6 +152,16 @@
     <div class="feature-icon">🗺</div>
     <h3>Interactive Map</h3>
     <p>All recommendations on one map. Find top spots near you or in a new city at a glance.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">📚</div>
+    <h3>Not Just Places</h3>
+    <p>Books, movies, shows, music, games and more — everything your friends would recommend, in one place.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">💬</div>
+    <h3>Ask Directly</h3>
+    <p>Message the recommender right in the chat — ask if the tip is still good, or what else they'd suggest.</p>
   </div>
   <div class="feature">
     <div class="feature-icon">🔒</div>
@@ -167,7 +179,7 @@
     <p>Add photos and personal notes to your recommendations — for you and your friends.</p>
   </div>
   <div class="feature">
-    <div class="feature-icon">🗺</div>
+    <div class="feature-icon">📥</div>
     <h3>Google Maps Import</h3>
     <p>Import your existing Google Maps reviews with one click via Google Takeout.</p>
   </div>

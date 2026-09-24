@@ -5,25 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charlie's Recos – Empfehlungen von Freunden</title>
-  <meta name="description" content="Die Orte, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps." />
+  <meta name="description" content="Die Orte und Dinge, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps – jetzt mit Chat." />
   <link rel="canonical" href="https://www.getcharlie.app/" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Charlie's Recos" />
   <meta property="og:title" content="Charlie's Recos – Empfehlungen von Freunden" />
-  <meta property="og:description" content="Die Orte, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps." />
+  <meta property="og:description" content="Die Orte und Dinge, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps – jetzt mit Chat." />
   <meta property="og:url" content="https://www.getcharlie.app/" />
-  <meta property="og:image" content="https://www.getcharlie.app/icon.png" />
+  <meta property="og:image" content="https://www.getcharlie.app/icon-512.png" />
   <meta property="og:locale" content="de_DE" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Charlie's Recos – Empfehlungen von Freunden" />
-  <meta name="twitter:description" content="Die Orte, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps." />
-  <meta name="twitter:image" content="https://www.getcharlie.app/icon.png" />
+  <meta name="twitter:description" content="Die Orte und Dinge, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps – jetzt mit Chat." />
+  <meta name="twitter:image" content="https://www.getcharlie.app/icon-512.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Charlie's Recos",
-    "description": "Die Orte, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps.",
+    "description": "Die Orte und Dinge, die deine Freunde wirklich empfehlen würden. Charlie ist die persönliche Empfehlungskarte für echte Geheimtipps – jetzt mit Chat.",
     "url": "https://www.getcharlie.app/",
     "applicationCategory": "TravelApplication",
     "operatingSystem": "iOS, Android",
@@ -43,7 +45,7 @@
     /* Nav */
     nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 5vw; background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo { width: 36px; height: 36px; background: var(--red); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 18px; }
+    .nav-logo { width: 36px; height: 36px; border-radius: 10px; display: block; }
     .nav-name { font-weight: 900; font-size: 20px; color: var(--text); }
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 15px; font-weight: 500; transition: color .2s; }
@@ -130,7 +132,7 @@
 
 <nav>
   <a class="nav-brand" href="/">
-    <div class="nav-logo">C</div>
+    <img class="nav-logo" src="/icon-512.png" alt="Charlie" width="36" height="36" />
     <span class="nav-name">Charlie</span>
   </a>
   <div class="nav-links">
@@ -149,7 +151,7 @@
 <section class="hero">
   <div class="hero-badge">🗺 Für iOS &amp; Android &amp; Web</div>
   <h1>Die Orte, die deine<br /><span>Freunde empfehlen</span></h1>
-  <p>Keine anonymen Bewertungen. Keine bezahlte Platzierung. Nur echte Empfehlungen von Menschen, denen du vertraust.</p>
+  <p>Keine anonymen Bewertungen. Keine bezahlte Platzierung. Nur echte Empfehlungen von Menschen, denen du vertraust — Orte, Bücher, Filme und mehr.</p>
   <div class="hero-btns">
     <a class="btn-primary" href="https://apps.apple.com/app/id6762520662" target="_blank" rel="noopener">
       🍎 App Store (iOS)
@@ -161,7 +163,7 @@
       🌐 Im Browser öffnen
     </a>
   </div>
-  <p class="store-note">Kostenlos · iOS 16+ · Android 8+</p>
+  <p class="store-note">Kostenlos · Altersfreigabe: 4+ (iOS) · Ab 0 Jahren (Google Play)</p>
 </section>
 
 <div class="features" id="features">
@@ -174,6 +176,16 @@
     <div class="feature-icon">🗺</div>
     <h3>Interaktive Karte</h3>
     <p>Alle Empfehlungen auf einer Karte. Finde Top-Spots in deiner Nähe oder in einer neuen Stadt auf einen Blick.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">📚</div>
+    <h3>Nicht nur Orte</h3>
+    <p>Bücher, Filme, Serien, Musik, Spiele und mehr — alles, was deine Freunde empfehlen würden, an einem Ort.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">💬</div>
+    <h3>Direkt nachfragen</h3>
+    <p>Frag den Empfehler direkt im Chat — zum Beispiel, ob der Tipp noch aktuell ist oder was er sonst empfiehlt.</p>
   </div>
   <div class="feature">
     <div class="feature-icon">🔒</div>
@@ -191,7 +203,7 @@
     <p>Füge Fotos und persönliche Notizen zu deinen Empfehlungen hinzu — für dich und deine Freunde.</p>
   </div>
   <div class="feature">
-    <div class="feature-icon">🗺</div>
+    <div class="feature-icon">📥</div>
     <h3>Google Maps Import</h3>
     <p>Importiere deine bestehenden Google Maps Bewertungen mit einem Klick via Google Takeout.</p>
   </div>
