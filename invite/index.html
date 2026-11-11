@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/cookie-consent.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Du wurdest zu Charlie eingeladen</title>
+  <meta property="og:title" content="Charlie's Recos — Einladung">
+  <meta property="og:description" content="Ortsempfehlungen von Freunden — kostenlos">
+  <meta property="og:image" content="https://www.getcharlie.app/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #F3F5FA; color: #10172A; min-height: 100vh; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 5vw; background: #fff; border-bottom: 1px solid #E8ECF4; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo { width: 32px; height: 32px; background: #C62828; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 16px; }
+    .nav-name { font-weight: 900; font-size: 18px; color: #10172A; }
+    .content { max-width: 480px; margin: 48px auto; padding: 0 5vw 80px; }
+    .card { background: #fff; border-radius: 20px; padding: 32px 24px; border: 1px solid #E8ECF4; text-align: center; }
+    .avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #C62828, #ef5350); display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 800; margin: 0 auto 16px; }
+    .invite-title { font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+    .invite-sub { color: #55627D; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+    .features { text-align: left; background: #F3F5FA; border-radius: 12px; padding: 16px; margin-bottom: 24px; }
+    .feature { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+    .feature:last-child { margin-bottom: 0; }
+    .feature-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .feature-text { font-size: 13px; color: #55627D; line-height: 1.5; }
+    .feature-text strong { color: #10172A; }
+    .store-row { display: flex; gap: 10px; }
+    .btn-store { flex: 1; display: block; padding: 13px 10px; background: #10172A; color: #fff; font-weight: 600; font-size: 13px; border-radius: 12px; text-align: center; text-decoration: none; }
+    .btn-store:hover { background: #1e293b; }
+    .store-hint { font-size: 10px; font-weight: 400; opacity: 0.7; display: block; }
+    .already-have { margin-top: 12px; color: #8B93A7; font-size: 12px; }
+    .already-have a { color: #C62828; text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="/">
+    <div class="nav-logo">C</div>
+    <span class="nav-name">Charlie</span>
+  </a>
+</nav>
+<div class="content">
+  <div class="card">
+    <div class="avatar" id="avatar">👤</div>
+    <div class="invite-title" id="invite-title">Du wurdest zu Charlie eingeladen</div>
+    <div class="invite-sub" id="invite-sub">Dein Freund teilt seine Lieblingsplätze mit dir — Restaurants, Hotels und Geheimtipps.</div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-text"><strong>Karte deiner Freunde</strong><br>Sieh auf einer Karte, was deine Freunde empfehlen.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🤝</div>
+        <div class="feature-text"><strong>Kein Algorithmus</strong><br>Nur echte Empfehlungen von Menschen, denen du vertraust.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-text"><strong>Privat &amp; kostenlos</strong><br>Deine Daten bleiben in deinem Freundeskreis.</div>
+      </div>
+    </div>
+    <div class="store-row" id="store-row"></div>
+    <div class="already-have" id="already-have"></div>
+  </div>
+</div>
+
+<script>
+  const lang = (navigator.language || 'en').split('-')[0];
+  const T = {
+    de: {
+      title: '{name} hat dich zu Charlie eingeladen',
+      titleGeneric: 'Du wurdest zu Charlie eingeladen',
+      sub: '{name} teilt seine Lieblingsplätze mit dir — Restaurants, Hotels und Geheimtipps.',
+      subGeneric: 'Dein Freund teilt seine Lieblingsplätze mit dir — Restaurants, Hotels und Geheimtipps.',
+      features: [
+        ['🗺️', 'Karte deiner Freunde', 'Sieh auf einer Karte, was deine Freunde empfehlen.'],
+        ['🤝', 'Kein Algorithmus', 'Nur echte Empfehlungen von Menschen, denen du vertraust.'],
+        ['🔒', 'Privat & kostenlos', 'Deine Daten bleiben in deinem Freundeskreis.'],
+      ],
+      iosStore: 'App Store', androidStore: 'Google Play',
+      iosHint: '↓ iPhone', androidHint: '↓ Android',
+      alreadyHave: 'App schon installiert? <a href="{deeplink}">Hier öffnen</a>',
+    },
+    en: {
+      title: '{name} invited you to Charlie',
+      titleGeneric: 'You\'ve been invited to Charlie',
+      sub: '{name} shares their favourite places with you — restaurants, hotels and hidden gems.',
+      subGeneric: 'Your friend shares their favourite places with you — restaurants, hotels and hidden gems.',
+      features: [
+        ['🗺️', 'Your friends\' map', 'See what your friends recommend on a map.'],
+        ['🤝', 'No algorithm', 'Only real recommendations from people you trust.'],
+        ['🔒', 'Private & free', 'Your data stays within your circle of friends.'],
+      ],
+      iosStore: 'App Store', androidStore: 'Google Play',
+      iosHint: '↓ iPhone', androidHint: '↓ Android',
+      alreadyHave: 'App already installed? <a href="{deeplink}">Open here</a>',
+    },
+    fr: {
+      title: '{name} t\'a invité sur Charlie',
+      titleGeneric: 'Tu as été invité sur Charlie',
+      sub: '{name} partage ses endroits préférés avec toi — restaurants, hôtels et bons plans.',
+      subGeneric: 'Ton ami partage ses endroits préférés avec toi — restaurants, hôtels et bons plans.',
+      features: [
+        ['🗺️', 'La carte de tes amis', 'Vois sur une carte ce que tes amis recommandent.'],
+        ['🤝', 'Pas d\'algorithme', 'Uniquement de vraies recommandations de personnes de confiance.'],
+        ['🔒', 'Privé & gratuit', 'Tes données restent dans ton cercle d\'amis.'],
+      ],
+      iosStore: 'App Store', androidStore: 'Google Play',
+      iosHint: '↓ iPhone', androidHint: '↓ Android',
+      alreadyHave: 'App déjà installée ? <a href="{deeplink}">Ouvrir ici</a>',
+    },
+    es: {
+      title: '{name} te ha invitado a Charlie',
+      titleGeneric: 'Has sido invitado a Charlie',
+      sub: '{name} comparte sus lugares favoritos contigo — restaurantes, hoteles y sitios únicos.',
+      subGeneric: 'Tu amigo comparte sus lugares favoritos contigo — restaurantes, hoteles y sitios únicos.',
+      features: [
+        ['🗺️', 'El mapa de tus amigos', 'Ve en un mapa lo que recomiendan tus amigos.'],
+        ['🤝', 'Sin algoritmos', 'Solo recomendaciones reales de personas de confianza.'],
+        ['🔒', 'Privado y gratuito', 'Tus datos se quedan en tu círculo de amigos.'],
+      ],
+      iosStore: 'App Store', androidStore: 'Google Play',
+      iosHint: '↓ iPhone', androidHint: '↓ Android',
+      alreadyHave: '¿Ya tienes la app? <a href="{deeplink}">Abrir aquí</a>',
+    },
+  };
+  const s = T[lang] || T.en;
+
+  const IOS_URL = 'https://apps.apple.com/app/id6762520662';
+  const ANDROID_URL = 'https://play.google.com/store/apps/details?id=app.getcharlie.app';
+  const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const isAndroid = /Android/.test(navigator.userAgent);
+
+  // Parse userId and display name from URL
+  const userId = location.pathname.match(/\/invite\/([^/?#]+)/)?.[1] || '';
+  const params = new URLSearchParams(location.search);
+  const inviterName = params.get('name') ? decodeURIComponent(params.get('name')) : '';
+
+  // Render invite card
+  function render() {
+    // Avatar initial
+    const initial = inviterName ? inviterName.charAt(0).toUpperCase() : '👤';
+    document.getElementById('avatar').textContent = inviterName ? initial : '👤';
+
+    // Title and subtitle
+    const title = inviterName
+      ? s.title.replace('{name}', inviterName)
+      : s.titleGeneric;
+    const sub = inviterName
+      ? s.sub.replace('{name}', inviterName)
+      : s.subGeneric;
+    document.getElementById('invite-title').textContent = title;
+    document.getElementById('invite-sub').textContent = sub;
+    document.title = title;
+
+    // Features
+    const featuresEl = document.querySelector('.features');
+    featuresEl.innerHTML = s.features.map(([icon, title, desc]) =>
+      `<div class="feature"><div class="feature-icon">${icon}</div><div class="feature-text"><strong>${title}</strong><br>${desc}</div></div>`
+    ).join('');
+
+    // Store buttons
+    const deeplink = userId ? `charlie://invite/${userId}` : 'charlie://';
+    let storeBtns = '';
+    if (isIOS) {
+      storeBtns = `<a class="btn-store" href="${IOS_URL}"><span class="store-hint">${s.iosHint}</span>${s.iosStore}</a>`;
+    } else if (isAndroid) {
+      storeBtns = `<a class="btn-store" href="${ANDROID_URL}"><span class="store-hint">${s.androidHint}</span>${s.androidStore}</a>`;
+    } else {
+      storeBtns = `
+        <a class="btn-store" href="${IOS_URL}"><span class="store-hint">${s.iosHint}</span>${s.iosStore}</a>
+        <a class="btn-store" href="${ANDROID_URL}"><span class="store-hint">${s.androidHint}</span>${s.androidStore}</a>`;
+    }
+    document.getElementById('store-row').innerHTML = storeBtns;
+
+    // "Already have the app?" link
+    document.getElementById('already-have').innerHTML = s.alreadyHave.replace('{deeplink}', deeplink);
+  }
+
+  render();
+</script>
+</body>
+</html>
